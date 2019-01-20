@@ -57,6 +57,14 @@ class Student
     end
   end
   
+  def self.all
+    sql = <<-SQL
+              SELECT * FROM students
+            SQL
+    DB [:conn].execute(sql).map do |row|
+      find_by_name(row[1])
+    end
+  
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
