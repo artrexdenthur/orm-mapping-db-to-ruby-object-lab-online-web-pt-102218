@@ -10,7 +10,7 @@ class Student
   def self.new_from_db(row)
     # create a new Student object given a row from the database
     # row schema = [id, name, grade]
-    self.new(row[0], row[1], row[2])
+    new(row[0], row[1], row[2])
   end
 
   def self.all
