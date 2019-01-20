@@ -23,6 +23,7 @@ class Student
               SELECT * FROM students
               WHERE name = ?
             SQL
+    binding.pry
     found_row = DB[:conn].execute(sql, name)[0][0]
     new_from_db(found_row)
   end
