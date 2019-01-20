@@ -61,7 +61,7 @@ class Student
     sql = <<-SQL
               SELECT * FROM students
             SQL
-    DB [:conn].execute(sql).map do |row|
+    DB[:conn].execute(sql).map do |row|
       find_by_name(row[1])
     end
   end
