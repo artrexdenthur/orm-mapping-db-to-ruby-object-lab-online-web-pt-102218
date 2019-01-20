@@ -64,6 +64,7 @@ class Student
     DB [:conn].execute(sql).map do |row|
       find_by_name(row[1])
     end
+  end
   
   def self.create_table
     sql = <<-SQL
