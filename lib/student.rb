@@ -26,7 +26,7 @@ class Student
               WHERE name = ?
             SQL
     found_row = DB[:conn].execute(sql, name)[0][0]
-    
+    new_from_db(found_row)
   end
   
   def save
